@@ -34,8 +34,8 @@ func (this *FofaController) Get() {
 func (this *FofaController) Post() {
 	// 处理FOFA查询请求
 	keyword := this.GetString("query")
-	email := "962850765@qq.com"               // 替换为你的FOFA账户邮箱
-	key := "af3c11358202ae64d889dab2b8caa559" // 替换为你的FOFA账户API Key
+	email := ""               // 替换为你的FOFA账户邮箱
+	key := "" // 替换为你的FOFA账户API Key
 	encodedKeyword := base64.URLEncoding.EncodeToString([]byte(keyword))
 	timeStamp := strconv.Itoa(int(time.Now().Unix()))
 	sign := fmt.Sprintf("%s%d%s", encodedKeyword, timeStamp, key)
